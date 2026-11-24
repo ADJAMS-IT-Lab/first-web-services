@@ -1,1 +1,33 @@
-
+<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FWS_Libs — GitHub Publishing Guide V1.0</title><style>body{font:16px/1.65 system-ui,sans-serif;color:#19363b;margin:0;background:#f2f7f7}header{background:#003f46;color:white;padding:36px max(5%,calc((100% - 980px)/2))}main{max-width:980px;margin:auto;padding:24px}section{background:white;padding:24px;margin:18px 0;border:1px solid #d7e5e5;border-radius:10px}h2{color:#006b75}pre{background:#15363d;color:#fff;padding:18px;overflow:auto;border-radius:6px}a{color:#00747f}label{display:block;padding:5px}button{padding:10px;cursor:pointer}footer{text-align:center;padding:24px}@media print{section{break-inside:avoid}button{display:none}body{background:white}}</style><header><small>FIRST WEB SERVICES · ADJAMS-IT-Lab</small><h1>GitHub Publishing Guide V1.0</h1><p>APP 002 — SEO Checker Online · Develop → Test → Push → Publish → Improve</p></header><main><nav><a href="#create">Create</a> · <a href="#upload">Upload</a> · <a href="#pages">Pages</a> · <a href="#portal">Portal</a> · <a href="#git">Push / Pull</a> · <a href="#check">Checklist</a></nav><section id="create"><h2>1. Create repository</h2><p>Ouvrir <a href="https://github.com/new">GitHub New Repository</a>. Owner : ADJAMS-IT-Lab. Nom permanent : <code>seo-checker-online</code>. Public. README OFF si déjà fourni. Licence à choisir selon les droits de distribution.</p><pre>FIRST WEB SERVICES — FWS_Libs APP 002. SEO Checker Online V1.0.
+Free beginner-friendly SEO analysis, metadata diagnostics,
+SEO readiness score, search preview and optimization recommendations.</pre><p>Le nom commercial peut évoluer sans changer l’URL.</p></section><section id="upload"><h2>2. Prepare and upload</h2><pre>seo-checker-online/
+├── index.html
+├── about.html
+├── demo.html
+├── demo-video.html
+├── README.md
+├── GITHUB_SETUP.md
+├── CHANGELOG.md
+├── .nojekyll
+├── assets/
+│   ├── css/style.css
+│   ├── js/app.js
+│   ├── images/desktop.png, tablet.png, mobile.png
+│   ├── video/demo.mp4
+│   └── languages/en.json, fr.json, de.json, it.json, es.json
+└── downloads/SEO_CHECKER_ON_LINE_V1_0.zip</pre><p>Structure proposée, pas une liste de fichiers déjà créés. Décompresser le package, cliquer sur uploading an existing file, glisser les fichiers et dossiers à la racine. Vérifier les chemins. Commit changes : Initial release - SEO Checker Online V1.0. Le ZIP est facultatif et ne remplace pas les fichiers décompressés.</p></section><section id="pages"><h2>3. Enable GitHub Pages</h2><p>Settings → Pages → Deploy from a branch → main → / (root) → Save. Custom domain vide. Enforce HTTPS. Attendre la réussite du déploiement dans Actions.</p><p>Adresses prévues (non vérifiées) : <a href="https://adjams-it-lab.github.io/seo-checker-online/">RUN APP</a> · <a href="https://adjams-it-lab.github.io/seo-checker-online/about.html">ABOUT</a> · <a href="https://adjams-it-lab.github.io/seo-checker-online/demo.html">DEMO</a> · <a href="https://adjams-it-lab.github.io/seo-checker-online/demo-video.html">VIDEO</a> · <a href="https://github.com/ADJAMS-IT-Lab/seo-checker-online">SOURCE</a>.</p></section><section id="portal"><h2>4. Update the main portal</h2><p>Modifier uniquement le catalogue du repository <a href="https://github.com/ADJAMS-IT-Lab/first-web-services">first-web-services</a>. Conserver APP 001. Adapter le CSS existant.</p><pre>&lt;article class="app-card"&gt;
+  &lt;h2&gt;APP 002 — SEO Checker Online V1.0&lt;/h2&gt;
+  &lt;p&gt;Free SEO tools for beginners.&lt;/p&gt;
+  &lt;a href="../seo-checker-online/"&gt;RUN APP&lt;/a&gt;
+  &lt;a href="../seo-checker-online/about.html"&gt;ABOUT&lt;/a&gt;
+  &lt;a href="../seo-checker-online/demo-video.html"&gt;DEMO VIDEO&lt;/a&gt;
+  &lt;a href="https://github.com/ADJAMS-IT-Lab/seo-checker-online"&gt;GITHUB&lt;/a&gt;
+&lt;/article&gt;</pre></section><section id="git"><h2>5. Git PUSH / PULL — Windows CMD</h2><p>Installer <a href="https://git-scm.com/download/win">Git for Windows</a>. Cloner après le premier commit. Authentification GitHub requise pour pousser.</p><pre>mkdir C:\FWS_Libs
+cd /d C:\FWS_Libs
+git clone https://github.com/ADJAMS-IT-Lab/seo-checker-online.git
+cd seo-checker-online
+git pull origin main</pre><p>Modifier et tester localement. Examiner les fichiers avant le commit.</p><pre>git status
+git add .
+git commit -m "Update SEO Checker V1.1"
+git push origin main</pre><p>Pour marquer la version initiale, sur le commit V1.0 correspondant (avant les changements V1.1) :</p><pre>git tag -a v1.0.0 -m "SEO Checker Online V1.0"
+git push origin v1.0.0</pre><p>GitHub → Releases → Draft a new release → sélectionner le tag → joindre le ZIP → Publish release. En cas de conflit Git, résoudre le conflit avant de pousser, ne pas forcer le push.</p></section><section><h2>6. Technical limits</h2><p>HTML, CSS, JS, JSON, XML, CSV, images, vidéos et WebAssembly sont compatibles. PHP, MySQL et Python serveur nécessitent un autre environnement. CORS limite les analyses SEO externes : prévoir import HTML et copier-coller. Ne jamais publier de secrets ou clés API privées. Respecter les conditions et quotas GitHub Pages. Le score SEO interne n’est pas une note Google.</p></section><section id="check"><h2>7. Publication checklist</h2><p id="count">0 / 20</p><progress id="progress" max="20" value="0" style="width:100%"></progress><div id="items"></div><button onclick="window.print()">Print / Save PDF</button> <button id="reset">Reset checklist</button></section></main><footer>© 2026 FIRST WEB SERVICES · FWS_Libs · ADJAMS-IT-Lab</footer><script>const tasks=['Créer repository','Préparer index.html','Préparer about.html','Préparer README.md','Préparer CHANGELOG.md','Ajouter CSS et JS','Ajouter captures','Ajouter vidéo','Tester localement','Vérifier liens relatifs','Vérifier absence de secrets','Uploader fichiers','Commit changes','Activer Pages','Vérifier HTTPS','Tester RUN APP','Tester ABOUT','Tester DEMO VIDEO','Mettre à jour portail','Créer tag et Release'];let saved=[];try{saved=JSON.parse(localStorage.getItem('fws-guide-checks')||'[]')}catch(e){};tasks.forEach((t,i)=>{const l=document.createElement('label'),c=document.createElement('input');c.type='checkbox';c.checked=!!saved[i];c.onchange=update;l.append(c,' '+t);document.querySelector('#items').append(l)});function update(){const a=[...document.querySelectorAll('input')].map(c=>c.checked),n=a.filter(Boolean).length;document.querySelector('#count').textContent=n+' / 20';document.querySelector('#progress').value=n;try{localStorage.setItem('fws-guide-checks',JSON.stringify(a))}catch(e){}}document.querySelector('#reset').onclick=()=>{document.querySelectorAll('input').forEach(c=>c.checked=false);update()};update()</script></html>
